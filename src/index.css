@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-fire: #FF4500;
+  --color-fire2: #FF6B00;
+  --color-gold: #FFD700;
+  --color-gold2: #FFA500;
+  --color-dark: #0A0A0A;
+  --color-dark2: #111111;
+  --color-dark3: #1A1A1A;
+  --color-green: #00C851;
+
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-condensed: "Barlow Condensed", sans-serif;
+  --font-sans: "Barlow", sans-serif;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Base custom classes to match the design */
+.bg-urgency {
+  background: linear-gradient(90deg, var(--color-fire), var(--color-fire2), var(--color-gold2), var(--color-fire2), var(--color-fire));
+  background-size: 300% 100%;
+  animation: gradient-move 3s ease infinite;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-bg {
+  background: 
+    radial-gradient(ellipse at 50% 0%, rgba(255,69,0,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 0% 100%, rgba(255,107,0,0.15) 0%, transparent 50%),
+    linear-gradient(180deg, var(--color-dark) 0%, var(--color-dark2) 100%);
+}
+
+.text-gradient-hero {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFD700 40%, #FF6B00 80%, #FF4500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-cta {
+  background: linear-gradient(135deg, var(--color-fire), var(--color-gold2));
+  box-shadow: 0 8px 40px rgba(255,69,0,0.5);
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 60px rgba(255,69,0,0.7);
+}
+
+/* Hide scrollbar for cleaner look if needed */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-fire2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fire);
+}
